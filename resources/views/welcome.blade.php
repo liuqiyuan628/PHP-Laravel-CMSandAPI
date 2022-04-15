@@ -14,11 +14,30 @@
 
     <h3>My Skills</h3>
 
-    <ul>
-        <li>PHP</li>
-        <li>Laravel</li>
-        <li>MySQL</li>
-    </ul>
+    
+    @foreach ($skills as $skill)
+    @if ($skill->skill_url)
+    <a href="{{$skill->skill_url}}">{{$skill->skill_name}}</a>
+    @endif
+        @if ($skill->image)
+                <div class="w3-container w3-margin-top">
+                    <img src="{{asset('storage/'.$skill->image)}}" width="200">
+                </div>
+        @endif
+    @endforeach
+ 
+    <h3>My Education History</h3>
+
+    
+@foreach ($educations as $education)
+<p>College Name: {{$education->college_name}}</p>
+<span>Major: {{$education->major}}</span>
+<span>GPA: {{$education->GPA}}</span>
+<span>Entry Year: {{$education->start_year}}</span>
+<span>End Year: {{$education->end_year}}</span>
+
+
+@endforeach
 
 </section>
 

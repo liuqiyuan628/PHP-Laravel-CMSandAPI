@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+    // public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -29,10 +30,6 @@ class Project extends Model
         return $this->belongsTo(Type::class, 'type_id');
     }
 
-    public function user()
-    {
-        return $this->belongsTo(USer::class, 'user_id');
-    }
     
     public function getRouteKeyName()
     {
