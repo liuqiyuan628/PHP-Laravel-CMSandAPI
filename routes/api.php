@@ -51,7 +51,6 @@ Route::get('/projects',function(){
     });
 
 
-
     
  Route::get('/projects/profile/{project?}',function(Project $project){ 
     
